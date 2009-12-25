@@ -1,0 +1,14 @@
+gcc -Wall test.c -o tested `pkg-config --cflags --libs xcb`
+
+0. 
+ a. Set up a git repository
+ b. Make vim work with it
+1. Decide on a language to use -- C
+2. Decide between xcb and xlib -- XCB seems more fun
+3. Write a Makefile -- Learn it damn it
+4. Write backend in c
+ a. Determine what needs to be written
+5. Write config in ocaml or xml perhaps
+6. Write config parser
+7. Write themes
+8. Write keybind motor
