@@ -11,7 +11,10 @@ typedef struct Client {
     char * name[MAX_NAME_LEN]; // Its hard to know how big this should be
     uint8_t name_len = MAX_NAME_LEN;
     tag_t * tag_list[MAX_TAGS]; // Do we really need this? 
-    unsigned short geometry[4]; // x, y, width, height
+    unsigned short x, y, width, height;
 } client_t;
 
-client_t * get_client(
+client_t spawn_client(char *name);
+void kill_client(client_t *c);
+void tag_client(client_t *c, tag_t * t);
+void untag_client(client_t *c, tag_t * t);

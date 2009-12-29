@@ -1,10 +1,10 @@
 #define MAX_VIEWS 32 // Its hard to know how big this should be
+#define MAX_TAGS 32 // Its hard to know how big this should be
+
+typedef viewmode enum {CASCADING, FULLSCREEN};
 
 typedef struct {
-    view_t * list[MAX_VIEWS]; 
-    view_t * current;
-} views_t;
-
-typedef struct {
+    viewmode mode;
+    tag_t *tags[MAX_TAGS];
     
 } view_t;

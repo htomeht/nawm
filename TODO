@@ -1,7 +1,7 @@
 gcc -Wall test.c -o tested `pkg-config --cflags --libs xcb`
 
 0. 
- a. Set up a git repository
+ a. Set up a git repository -- DONE
  b. Make vim work with it
 1. Decide on a language to use -- C
 2. Decide between xcb and xlib -- XCB seems more fun

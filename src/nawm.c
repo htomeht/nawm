@@ -15,13 +15,33 @@
  *********************************************************/
 int main(int argc, char *argv[])
 {
-    //connect to X server
-    xcb_connection_t *c = xcb_connect(NULL, NULL);
+    int i, screen_nr;
+    screen_t * screen_list;
 
-    //Do stuff
+    // Connect to X server
+    xcb_connection_t *c = xcb_connect(NULL, &screen_nr);
+
+    // Get connetion setup
+    const xcb_setup_t *setup = xcb_get_setup(c);
+
+    // Allocate the screen list.
+    xcb_screen_iterator_t iter = xcb_setup_roots_iterator(setup);
+    for (i = 0; i < screen_nr; ++i) {
+        xcb_screen_next (&iter);  
+        screen_list[i] = iter.data;
+    }
+
+    // Assign a view to each screen.
+    // 1. Create a view
+    // 2. Set curr_view to this
+
+    // 1.1 Check the config for what view should be created
+    // 1.2 Either create a default view or otherwise a custom one.
+
+    // Do stuff
 
 
-    run();   
+    run(c);   
     cleanup(c);
     return 0;
 }
