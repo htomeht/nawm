@@ -1,7 +1,9 @@
 // Clients are pretty much a window that the window manager should handle. 
 // They should be simplistic and pretty much just provide an interface.
+#ifndef NAWM_CLIENT_H
+#define NAWN_CLIENT_H
 
-#include "tags.h" // If tags.h only defines the tag_t týpe we can safely pull it into this file.
+#include "tag.h" // If tag.h only defines the tag_t type we can safely pull it into this file.
 
 #define MAX_NAME_LEN = 32
 #define MAX_TAGS = 8
@@ -18,3 +20,5 @@ client_t spawn_client(char *name);
 void kill_client(client_t *c);
 void tag_client(client_t *c, tag_t * t);
 void untag_client(client_t *c, tag_t * t);
+
+#endif
